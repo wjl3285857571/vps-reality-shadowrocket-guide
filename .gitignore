@@ -1,0 +1,31 @@
+# 本仓库只保存通用流程，不保存任何真实节点或凭据。
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# 节点与客户端产物
+outputs/
+private/
+backups/
+*.info
+*.uri
+*.webloc
+*.png
+*.qrcode
+*client*.env
+*client*.txt
+
+# 密钥、证书与 SSH 文件
+*.key
+*.pem
+*.p12
+*.pfx
+id_*
+authorized_keys*
+
+# 本地配置与日志
+config.local.json
+*.local.json
+*.log
+*.tmp
