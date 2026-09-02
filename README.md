@@ -123,7 +123,8 @@ IPPure + BrowserLeaks 交叉验证
 ├── docs
 │   ├── 01-完整部署流程.md
 │   ├── 02-Shadowrocket与DNS优化.md
-│   └── 03-安全验收与回滚.md
+│   ├── 03-安全验收与回滚.md
+│   └── 04-日本VPS到美国静态ISP-SOCKS5链式代理.md
 └── scripts
     ├── install-reality.sh
     ├── verify-server.sh
@@ -135,6 +136,7 @@ IPPure + BrowserLeaks 交叉验证
 - `01-完整部署流程.md`：从新 VPS 基线检查到客户端导入，共包含部署、备份、防火墙、Fail2ban、SSH 安全边界和验收。
 - `02-Shadowrocket与DNS优化.md`：解释混合 DNS 的原因，并给出 Mac、iPhone、Wi-Fi、蜂窝网络的逐项修改方法。
 - `03-安全验收与回滚.md`：给出六层验收模型、各种异常的回滚方法和凭据泄露后的处理顺序。
+- `04-日本VPS到美国静态ISP-SOCKS5链式代理.md`：在保留原日本 Reality 出口的前提下，按客户端身份增加美国静态 ISP SOCKS5 出口，并验证双线路、UDP 与 fail-closed。
 
 ### 脚本说明
 
@@ -202,6 +204,7 @@ VLESS + XTLS Vision + REALITY / TCP 443
 1. [完整部署流程](docs/01-完整部署流程.md)
 2. [Shadowrocket 与 DNS 优化](docs/02-Shadowrocket与DNS优化.md)
 3. [安全、验收与回滚](docs/03-安全验收与回滚.md)
+4. [日本 VPS 到美国静态 ISP SOCKS5 链式代理](docs/04-日本VPS到美国静态ISP-SOCKS5链式代理.md)
 
 ## 仓库脚本
 
