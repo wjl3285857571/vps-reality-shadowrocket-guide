@@ -163,11 +163,14 @@ bash scripts/check-sensitive.sh
 服务器部署示例只使用占位符：
 
 ```bash
-sudo REALITY_TARGET='<REALITY_TARGET>' \
+sudo CLIENT_ADDRESS='<VPS_PUBLIC_IP>' \
+  REALITY_TARGET='<REALITY_TARGET>' \
   REALITY_SERVER_NAME='<REALITY_SERVER_NAME>' \
   LISTEN_PORT='443' \
   bash scripts/install-reality.sh
 ```
+
+`CLIENT_ADDRESS` 是可选的；如果不传，`/root/reality-client.env` 里的 `ADDRESS` 字段会保留为 `<VPS_IP>` 字面占位符，**需要在脚本运行后用 `sed` 替换为真实 IP**，否则导出的节点 URI/二维码里写的是字面 `<VPS_IP>`，客户端导入后会连接超时。建议从一开始就传 `CLIENT_ADDRESS`。
 
 不要直接复制尖括号占位符，也不要把真实值写回 Git 仓库。
 

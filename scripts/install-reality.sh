@@ -126,8 +126,13 @@ EOF
 chown root:nogroup "$XRAY_CONFIG"
 chmod 640 "$XRAY_CONFIG"
 
+# 从环境变量读取客户端 ADDRESS；若未设置则使用占位符，但脚本会提示。
+: "${CLIENT_ADDRESS:=<VPS_IP>}"
+if [[ "$CLIENT_ADDRESS" == "<"*">" ]]; then
+  echo "提示：未设置 CLIENT_ADDRESS，环境文件里的 ADDRESS 字段会保留为 <VPS_IP>。可在脚本运行后用 sed 替换为真实 IP，或在调本脚本前 export CLIENT_ADDRESS=<IP>。" >&2
+fi
 cat > "$CLIENT_INFO" <<EOF
-ADDRESS=<VPS_IP>
+ADDRESS=${CLIENT_ADDRESS}
 PORT=${LISTEN_PORT}
 UUID=${UUID}
 FLOW=xtls-rprx-vision
